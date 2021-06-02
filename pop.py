@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env pythonw
 import sys
 import wx
 import wx.html2
@@ -6,7 +6,7 @@ import wx.html2
 
 def run(url):
     app = wx.App(False)
-    frm = wx.Frame(None, title=url, style=wx.DEFAULT_FRAME_STYLE | wx.STAY_ON_TOP, size=(300, 480))
+    frm = wx.Frame(None, title=url, style=wx.DEFAULT_FRAME_STYLE, size=(800, 480))
 
     wv = wx.html2.WebView.New(frm)
     wv.LoadURL(url)
