@@ -1,12 +1,20 @@
 #!/usr/bin/env pythonw
-import sys
+import click
 import wx
 import wx.html2
 
-
-def run(url):
+@click.command()
+@click.argument('url')
+@click.option('--height', default=800, help='Height of the window')
+@click.option('--width', default=480, help='Width of the window')
+def run(url, height, width):
     app = wx.App(False)
-    frm = wx.Frame(None, title=url, style=wx.DEFAULT_FRAME_STYLE, size=(800, 480))
+    frm = wx.Frame(
+        None,
+        title=url,
+        style=wx.DEFAULT_FRAME_STYLE,
+        size=(width, height)
+    )
 
     wv = wx.html2.WebView.New(frm)
     wv.LoadURL(url)
@@ -21,4 +29,4 @@ def run(url):
 
 
 if __name__ == '__main__':
-    run(sys.argv[1])
+    run()

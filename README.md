@@ -5,14 +5,14 @@ Always on top resizable dialog displaying a URL.
 ## Installation on OSX
 
 ```sh
-brew install wxMac
-brew install pip
-pip install wxPython
+conda create -yn pythonw python=3.11
+conda activate pythonw
+conda install python.app
+pip install -r requirements.txt
 ```
 
 ## Usage
-
 ```sh
-# watching the big coin
-pop.py https://www.gdax.com/trade/BTC-USD
+# Lets dance!
+./pop.py https://www.youtube.com/shorts/1Ejyxg-sN5Y
 ```
